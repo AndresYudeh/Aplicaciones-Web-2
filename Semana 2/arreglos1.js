@@ -10,15 +10,15 @@ const comida=[
 ] 
 
 //para agregar elementos a un arreglo de manera asociativa
-comidas["x"]="Parrillada";
-console.log(comida)
+//comidas["x"]="Parrillada";
+//console.log(comida)
 
 //para mostrar un arreglo en especifico
-console.log(comida[5])
+//console.log(comida[5])
 
 //o
-const funcionA = comida[5];
-funcionA;
+//const funcionA = comida[5];
+//funcionA;
 
 
 //los [] son para clonar

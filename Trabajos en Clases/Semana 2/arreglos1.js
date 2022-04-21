@@ -36,3 +36,4 @@ console.log(unioncomidas)
 //para modificar los elementos
 //comida[0]=["yogurt"];
 //console.log(comida)
+//a

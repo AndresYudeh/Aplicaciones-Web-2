@@ -11,7 +11,7 @@ const comida=[
 
 //para agregar elementos a un arreglo de manera asociativa
 //comidas["x"]="Parrillada";
-console.log(comida)
+//console.log(comida)
 
 
 //para mostrar un arreglo en especifico

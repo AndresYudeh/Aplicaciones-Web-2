@@ -7,7 +7,7 @@ const persona={
         lng: 34.3453453,
     },
     getNombreCompleto(){
-        return´${this.nombre}${this.apellido}}´
+        return `${this.nombre}${this.apellido}}`;
+        console.log(persona.getNombreCompleto);
 }
-
-console.log(persona.getNombreCompleto)
+}

@@ -7,8 +7,6 @@ class Comida{
         this.originario = originario;
         this.termino = termino;
     }
-    
 }
 let carne = new Comida('Steack House','Steack, sal, pimienta, romero, etc.','Plato Fuerte','EEUU','3/4');
-
 console.log(carne);

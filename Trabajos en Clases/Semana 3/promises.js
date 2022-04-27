@@ -56,8 +56,6 @@ function emparejar(id)
 })
 }
 
-
-
 function emp(id)
 {
     return new Promise ((resolve, reject)=>{

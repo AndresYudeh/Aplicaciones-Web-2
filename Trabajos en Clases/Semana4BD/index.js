@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const conexion= "mongodb+srv://ayudeh:yudeh123456@cluster0.q6baw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const conexion= "mongodb+srv://yudeh:yudeh22@cluster0.kbcvn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 ( async ()=>{
     const estadoConexion = await mongoose.connect(conexion);

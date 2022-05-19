@@ -33,7 +33,8 @@ const crearProductos=async(req,res)=>{
     {
         res.status(400).json({
             message:
-            'El producto con ese nombre ya existe ${productoExiste.nombre}'+productoExiste.nombre;
+            //'El producto con ese nombre ya existe'+productoExiste.nombre
+            `El producto con ese nombre ya existe ${productoExiste.nombre}`
         })
     }
     const producto= new Productos(body);

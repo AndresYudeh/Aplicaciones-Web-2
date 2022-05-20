@@ -1,3 +1,4 @@
+//Conexion a la base de datos MongoDB Atlas
 const mongoose = require('mongoose');
 
 const dbConnection = async ()=>{

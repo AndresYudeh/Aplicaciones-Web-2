@@ -10,13 +10,13 @@ const {
 
 }=require('../controladores').productos;
 
-const {ValidarCampos}= require('../middleware');
+const {validarCampos}= require('../middleware');
 
 const router = Router();
 
 router.get('/',obtenerProductos)
 router.get('/:id',[check('id','El id no es valido').isMongoId], obtenerProducto)
-router.post('/', [check('nombre','El nombre es obligatorio').not().isEmpty()],ValidarCampos, crearProductos)
+router.post('/', [check('nombre','El nombre es obligatorio').not().isEmpty()],validarCampos, crearProductos)
 router.put('/id',[check('id','El id no es valido').isMongoId], actualizarProductos)
 router.delete('/:id',[check('id','El id no es valido').isMongoId], borrarProductos)
 

@@ -4,7 +4,6 @@ const rutas= require('./rutas/ruta');
 const app = express();
 const PORT= 3000;
 
-
 app.use(express.json());
 app.use('/api', rutas);
 

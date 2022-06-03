@@ -1,3 +1,4 @@
+//arreglo de peliculas
 const peliculas=[   
     {
         Titulo: "Harry Potter y la Piedra Filosofal",

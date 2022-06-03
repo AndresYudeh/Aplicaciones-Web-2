@@ -1,6 +1,7 @@
 const express = require('express');
 const rutas= require('./rutas/ruta');
 
+//levantamiento del servidor
 const app = express();
 const PORT= 3000;
 

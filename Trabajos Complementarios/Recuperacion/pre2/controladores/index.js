@@ -1,5 +1,6 @@
 const pelis = require('../persistencias/arreglo');
 
+//Creacion de metodos buscar e ingresar
 const Buscar = async(req, res) => {
     res.status(200).send({
         datos: pelis

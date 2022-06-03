@@ -2,7 +2,7 @@ const pelis = require('../persistencias/arreglo');
 
 const Buscar = async(req, res) => {
     res.status(200).send({
-        datos: pelis,
+        datos: pelis
     });
 }
 const Ingresar = async(req, res) => {

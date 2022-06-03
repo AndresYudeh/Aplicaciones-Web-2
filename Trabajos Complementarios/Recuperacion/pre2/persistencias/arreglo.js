@@ -16,6 +16,4 @@ const peliculas=[
     }
 ]
 
-
-
 module.exports = peliculas;

@@ -1,3 +1,4 @@
+//Parametros de IProducto
 export interface IProducto{
     nombre: String;
     estado: Boolean;

@@ -1,8 +1,10 @@
+//Dependecias requeridas
 import {Producto} from '../models'
 import{IProducto} from '../interfaces'
 import { Request, Response } from 'express'
 import { body } from 'express-validator';
 
+//Controlador para obtener productos
 const obtenerProductos = async(req: Request, res:Response)=>{
     const {limite='10', desde='0' } = req.query;
     const query = {estado:true};
@@ -19,6 +21,7 @@ const obtenerProductos = async(req: Request, res:Response)=>{
     })
 }
 
+//Controlador para obtener un solo producto
 const obtenerProducto = async(req: Request, res:Response)=>{
     const{id} = req.params;
     const producto: IProducto|null  = (await Producto.findById(id));
@@ -26,6 +29,7 @@ const obtenerProducto = async(req: Request, res:Response)=>{
 
 }
 
+//Controlador para crear productos
 const crearProductos = async(req: Request, res:Response)=>{
     const{estado, ...body}= req.body as IProducto;
     const existeProducto = await Producto.findOne({nombre:body.nombre});
@@ -41,7 +45,7 @@ const crearProductos = async(req: Request, res:Response)=>{
 }
 
 
-
+//exportación de controladores desarrollados
 export{
     obtenerProductos,
     obtenerProducto, 

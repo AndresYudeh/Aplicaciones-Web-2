@@ -2,6 +2,7 @@ import mongoose  from "mongoose";
 import{Schema, model} from "mongoose"
 import{IProducto} from '../interfaces'
 
+//Modelo principal
 const ProductoSchema: mongoose.Schema = new Schema<IProducto>({
     nombre:{
         type: String,

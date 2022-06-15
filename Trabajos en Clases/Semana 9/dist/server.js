@@ -133,7 +133,7 @@ class Server {
     }
     listen() {
         this._express.listen(this.port, () => {
-            console.log(`Server ejecuted on ${this.port}/v1/sextoa/api/productos`);
+            console.log(`Servidor funcionando en  ${this.port}/v1/sextoa/api/productos`);
         });
     }
 }

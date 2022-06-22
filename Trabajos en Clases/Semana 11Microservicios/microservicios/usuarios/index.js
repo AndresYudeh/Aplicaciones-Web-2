@@ -1,15 +1,5 @@
-const express = require('express')
-const app = express()
+const servidor = require('./src/app')
 
-respuesta ={
-    data:[],
-    arquitectura:'Microservicio',
-    descripcion:'Cliente Microservicio'
-}
-app.get('/api/v2/clientes', (req, res)=>{
-    respuesta.data.push("Consumidor final","Juan Carlos")
-    console.log('Microservicio de clientes');
-    return res.send(respuesta)
+servidor.listen(process.env.PORT,()=>{
+    console.log(`Microservicio de usuarios funcionando en el puerto ${process.env.PORT}`);
 })
-
-module.exports =app;

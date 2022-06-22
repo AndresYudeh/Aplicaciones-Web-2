@@ -7,8 +7,8 @@ respuesta ={
     descripcion:'Cliente Microservicio'
 }
 app.get('/api/v2/clientes', (req, res)=>{
-    respuesta.data.push("Consumidor final","Juan Carlos")
-    console.log('Microservicio de clientes');
+    respuesta.data.push("Encebollado","Corviche","Chaulafan")
+    console.log('Microservicio de productos');
     return res.send(respuesta)
 })
 

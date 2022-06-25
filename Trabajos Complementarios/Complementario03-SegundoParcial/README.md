@@ -1,4 +1,4 @@
-# Complmentario #1
+# Complementario #1
 Traspasar las siguiente carpetas a typescript:
 - Interfaces
 - Models

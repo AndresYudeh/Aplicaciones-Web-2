@@ -16,6 +16,3 @@ Traspasar las siguiente carpetas a typescript:
 * Jesús Reyes
    - Reservas(Interfaces, models, controllers, Routers)
 * Los archivos index se trabajaron con la herramienta liveShare 
-### Cambios adicionales
-* Jesús Reyes
- - Creacion de los archivos: database, middlewares, server, index

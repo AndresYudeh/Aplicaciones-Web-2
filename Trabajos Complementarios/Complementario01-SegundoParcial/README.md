@@ -1,18 +1,18 @@
-# Complementario #1
-Traspasar las siguiente carpetas a typescript:
-- Interfaces
-- Models
-- Controllers
-- Routers
-## Distribucion:
+# Complementario #1 del Segundo Parcial.
+## Repartición de Rutas:
 * Manuel Pincay
-   - Carros(Interfaces, models, controllers, Routers)
+   - Carros (Interfaces, models, controllers, Routers).
 * Branly Yudeh
-   - Clientes y Trabajadores(Interfaces, models, controllers, Routers)
+   - Clientes y Trabajadores (Interfaces, models, controllers, Routers).
 * Kelvin Muñoz
-   - Espacios(Interfaces, models, controllers, Routers) 
+   - Espacios (Interfaces, models, controllers, Routers).
 * Ian Velez
-   - Establecimiento(Interfaces, models, controllers, Routers) 
+   - Establecimiento (Interfaces, models, controllers, Routers). 
 * Jesús Reyes
-   - Reservas(Interfaces, models, controllers, Routers)
-* Los archivos index se trabajaron con la herramienta liveShare 
+   - Reservas (Interfaces, models, controllers, Routers).
+
+## Pasos a seguir para la implementación del programa.
+1. Como pre-requisito debemos tener abierto nuestro Visual Studio Code y el Docker Desktop para que nuestro programa funcione de manera correctamente.
+2. Una vez tengamos abierto el Visual Studio Code, ejecutaremos una terminal (consola) en la carpeta donde tengamos el proyecto.
+3. En la consola ubicaremos el comando `docker-compose build`.
+4. Luego ubicaremos el comando `Docker-compose up`.

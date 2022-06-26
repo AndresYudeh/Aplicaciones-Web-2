@@ -12,7 +12,7 @@
    - Reservas (Interfaces, models, controllers, Routers).
 
 ## Pasos a seguir para la implementación del programa.
-1. Como pre-requisito debemos tener abierto nuestro Visual Studio Code y el Docker Desktop para que nuestro programa funcione de manera correctamente.
+1. Como pre-requisito debemos tener abierto nuestro Visual Studio Code y el Docker Desktop para que nuestro programa funcione de manera correcta.
 2. Una vez tengamos abierto el Visual Studio Code, ejecutaremos una terminal (consola) en la carpeta donde tengamos el proyecto.
-3. En la consola ubicaremos el comando `docker-compose build`.
+3. En la consola ubicaremos el comando `Docker-compose build`.
 4. Luego ubicaremos el comando `Docker-compose up`.

@@ -5,7 +5,7 @@
 * Branly Yudeh
    - Clientes y Trabajadores (Interfaces, models, controllers, Routers).
 * Kelvin Muñoz
-   - Espacios (Interfaces, models, controllers, Routers).
+   - Espacios y servidor (Interfaces, models, controllers, Routers).
 * Ian Velez
    - Establecimiento (Interfaces, models, controllers, Routers). 
 * Jesús Reyes

@@ -1,14 +1,14 @@
 # Complementario #1 del Segundo Parcial.
 ## Repartición de Rutas:
-* Manuel Pincay
+* Manuel Pincay:
    - Carros (Interfaces, models, controllers, Routers).
-* Branly Yudeh
+* Branly Yudeh:
    - Clientes y Trabajadores (Interfaces, models, controllers, Routers).
-* Kelvin Muñoz
-   - Espacios y servidor (Interfaces, models, controllers, Routers).
-* Ian Velez
+* Kelvin Muñoz:
+   - Espacios y servicios (Interfaces, models, controllers, Routers).
+* Ian Velez:
    - Establecimiento (Interfaces, models, controllers, Routers). 
-* Jesús Reyes
+* Jesús Reyes:
    - Reservas (Interfaces, models, controllers, Routers).
 
 ## Pasos a seguir para la implementación del programa.

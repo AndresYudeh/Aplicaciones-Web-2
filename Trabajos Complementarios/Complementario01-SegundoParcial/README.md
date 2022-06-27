@@ -16,3 +16,7 @@
 2. Una vez tengamos abierto el Visual Studio Code, ejecutaremos una terminal (consola) en la carpeta donde tengamos el proyecto.
 3. En la consola ubicaremos el comando `Docker-compose build`.
 4. Luego ubicaremos el comando `Docker-compose up`.
+
+### *A tener cuenta*:
+- La configuración del archvio .env es para el apartado de desarrollo.
+- Y por otro lado el archivo docker-compose está más orientado al ambito de producción.

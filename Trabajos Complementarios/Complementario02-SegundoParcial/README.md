@@ -19,6 +19,6 @@
 
 ### *A tener cuenta*:
 - En el archivo nginx irán las "rutas" de todos los microservicios requeridos.
-- Asi mismo en el archivo docker-compose se detallan una serie de parametros importantes para el funcionamiento del programa.
+- Asi mismo en el archivo docker-compose se detallan una serie de parametros importantes para el correcto funcionamiento del programa.
 - La configuración del archvio .env es para el apartado de desarrollo.
 - Y por otro lado el archivo docker-compose está más orientado al ambito de producción.

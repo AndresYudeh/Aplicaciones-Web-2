@@ -90,8 +90,54 @@ consultar.addEventListener('click', async() => {
   cuerpo.appendChild(tabla)
   document.querySelectorAll('.boton').forEach((ele:Element)=>{
     //console.log(elemento);
-    (ele as HTMLButtonElement).addEventListener('click', ()=>{
-      httpAxios.get(`prodductos/`)
+    (ele as HTMLButtonElement).addEventListener('click',async ()=>{
+      const {data} = await httpAxios.get<Producto>(`productos/${(ele as HTMLButtonElement).value}`)
+      console.log(data);
+      nombre.value=data.nombre
+      precio.value = data.precio.toString();
+      costo.value = data.precio.toString();
+      minimo.value = data.minimo.toString();
+      stock.value = data.stock.toString();
+      estado.value = data.estado!.toString();
+      id.value = data._id!
+
+      // console.log((ele as HTMLButtonElement).value);
     })
   })
+
+})
+
+
+const asignarValores=()=>{
+  const data: Producto ={
+    nombre: nombre.value,
+    costo: Number (costo.value),
+    precio: Number (precio.value),
+    minimo: Number (minimo.value),
+    stock: Number (stock.value)
+  }
+  return data;
+}
+
+grabar.addEventListener('click', async ()=>{
+  const data=asignarValores()
+  if(id.value.trim().length>0)
+  {
+    const respproducto:Producto = await (await httpAxios.put<Producto>(`productos/${id.value}`,data)).data
+    console.log(`El producto: ${respproducto.nombre} fue modificado con éxito`);
+    return;
+  }
+  try{
+    const respproducto:Producto = await (await httpAxios.post<Producto>(`productos`, data)).data
+    console.log(`El producto: ${respproducto.nombre} fue insertado con éxito`);
+  }catch(error) {
+    if(axios.isAxiosError(error))
+    {
+      console.log('Error en axios');
+    }
+    console.log(error);
+
+  }
+
+
 })

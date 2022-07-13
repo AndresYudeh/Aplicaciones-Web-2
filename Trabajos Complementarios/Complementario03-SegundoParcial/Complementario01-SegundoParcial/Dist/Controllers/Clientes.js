@@ -48,8 +48,7 @@ const obtenerCliente = (req, res) => __awaiter(void 0, void 0, void 0, function*
     if (!cliente) {
         return res.status(400).json({ status: 'No es una ID valida >:c' });
     }
-    res.json({ cliente,
-        msg: CLIENTE_ID });
+    res.json(cliente);
 });
 exports.obtenerCliente = obtenerCliente;
 //Controlador para crear clientes

@@ -41,8 +41,8 @@ app.innerHTML += `
 <br>
 <br>
 
-<button id="nuevo">Nuevo</button>
-<button id="grabar">Grabar</button>
+<button id="nuevo">Limpiar</button>
+<button id="grabar">Guardar</button>
 <button id="consultar">Consultar</button>
 
 <div id="cuerpo" />
@@ -72,45 +72,95 @@ nuevo.addEventListener('click', () =>{
   estado.value=""
 
 })
-
+//Consulta general y especifica
 consultar.addEventListener('click', async()=>{
   const resclientes:IResCliente =await (await httpAxios.get<IResCliente>('clientes')).data
-  console.log(resclientes);
-  const { clientes }=resclientes
+  
   const tabla = document.createElement('table');
   tabla.id="tabla"
   tabla.border="1"
+
+  // tabla.style.marginTop = "40px";
+  // tabla.style.marginLeft = "20%";
+  // tabla.style.width = "80 %";
+
+  tabla.style.marginTop = "65px";
+  tabla.style.marginLeft = "35.5%";
+  tabla.style.width = "80 %";
+
+  console.log(resclientes);
+  const { clientes }=resclientes;
+  console.log(clientes);
+
+    const row2 = tabla.insertRow();
+    const xcelda = row2.insertCell();
+    xcelda.innerHTML = `<p>NOMBRE</p>`;
+    const xcelda2= row2.insertCell();
+    xcelda2.innerHTML=`<p>CÉDULA</p>`;
+    const xcelda3= row2.insertCell();
+    xcelda3.innerHTML=`<p>TELÉFONO</p>`;
+    const xcelda5= row2.insertCell();
+    xcelda5.innerHTML=`<p>ELIMINAR CLIENTE</p>`;
+
+
 
   for(const cliente of clientes)
     {
         const row = tabla.insertRow()
         const celda = row.insertCell()
         celda.innerHTML
-        =` <button class="boton" value='${ cliente._id }'>
+        =` <button class="boton" value='${ cliente.CLIENTE_ID }'>
         ${cliente.CLIENTE_NOMBRE} </button>`;
 
         const celda2= row.insertCell()
         celda2.innerHTML=`${cliente.CLIENTE_CEDULA}`
-      
+        const celda3= row.insertCell()
+        celda3.innerHTML=`${cliente.CLIENTE_TELEFONO}`
+        const celda5= row.insertCell();
+        celda5.innerHTML=`<button class="botoneliminar" value='${cliente.CLIENTE_ID}'>ELIMINAR </button>`;
+
     }
+//Consulta especifica
+
       cuerpo.innerHTML=""
       cuerpo.appendChild(tabla)
       document.querySelectorAll('.boton').forEach((ele: Element) =>{
 
       ele.addEventListener('click', async()=>
       {
-          const{data} = await httpAxios.get<IClientes>(`clientes/${(ele as HTMLButtonElement).value}`)
+          const idcliente= (ele as HTMLButtonElement).value
+          const{data} = await httpAxios.get<IClientes>(`clientes/${idcliente}`)
           console.log(data);
-          id.value=data._id!
+          console.log(data.CLIENTE_ID);
           cliente_id.value=data.CLIENTE_ID.toString();
           cliente_nombre.value= data.CLIENTE_NOMBRE;
           cliente_cedula.value= data.CLIENTE_CEDULA;
           cliente_telefono.value=data.CLIENTE_TELEFONO;
           estado.value=data.Estado!.toString();
+          id.value=data._id!
+
 
     })
 
   })
+
+//eliminar
+
+  document.querySelectorAll('.botoneliminar').forEach( (ele2 : Element )  =>{
+
+    ele2.addEventListener('click',async ()=>
+   { 
+     const idcliente = (ele2 as HTMLButtonElement ).value;
+     console.log(idcliente);
+     const {data} = await httpAxios.delete<IClientes>(`clientes/${idcliente}`)
+     const eliminado = data
+     console.log(data);
+     console.log(`Cliente eliminado => ${eliminado.CLIENTE_ID}`);
+     //swal(`Listo!`, `Eliminado ${eliminado.CARRO_PLACA}!`, `success`);
+
+   })
+
+ })
 
 })
 
@@ -126,11 +176,13 @@ const asignarValores=()=>{
 
 grabar.addEventListener('click', async()=>{
   const data = asignarValores()
+  //modificacion de datos
   if(id.value.trim().length > 0){
-    const rescliente:IClientes = await(await httpAxios.put<IClientes>(`productos/${id.value}`,data)).data
+    const rescliente:IClientes = await(await httpAxios.put<IClientes>(`clientes/${cliente_id.value}`,data)).data
     console.log(`El cliente ${rescliente.CLIENTE_NOMBRE} fue modificado con exito`);
     return;
   }
+
   try{
     const rescliente:IClientes = await (await httpAxios.post<IClientes>(`clientes`, data)).data
     console.log(`El cliente ${rescliente.CLIENTE_NOMBRE} fue insertado con éxito`);

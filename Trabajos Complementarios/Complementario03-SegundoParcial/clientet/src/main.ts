@@ -1,4 +1,4 @@
-//Importacion de las dependecias
+//                    ***************Importacion de las dependecias*****************
 import './style.css'
 import axios from 'axios'
 import { IResCliente, IClientes } from './interfaces/ICliente'
@@ -74,7 +74,7 @@ nuevo.addEventListener('click', () =>{
   estado.value=""
 
 })
-//Para consulta general 
+//        *****************************Para consulta general**************************** 
 consultar.addEventListener('click', async()=>{
   const resclientes:IResCliente =await (await httpAxios.get<IResCliente>('clientes')).data
   
@@ -118,7 +118,7 @@ consultar.addEventListener('click', async()=>{
         celda5.innerHTML=`<button class="botoneliminar" value='${cliente.CLIENTE_ID}'>Eliminar </button>`;
 
     }
-//Para consulta especifica
+//             ***************************Para consulta especifica**************************************
 
       cuerpo.innerHTML=""
       cuerpo.appendChild(tabla)
@@ -142,7 +142,7 @@ consultar.addEventListener('click', async()=>{
 
   })
 
-//Metodo Eliminar
+//            *******************************Metodo Eliminar*****************************
 
   document.querySelectorAll('.botoneliminar').forEach( (ele2 : Element )  =>{
 
@@ -173,7 +173,7 @@ const asignarValores=()=>{
 
 grabar.addEventListener('click', async()=>{
   const data = asignarValores()
-//Modificar los datos
+//            *****************************Modificar los datos******************************
   if(id.value.trim().length > 0){
     const rescliente:IClientes = await(await httpAxios.put<IClientes>(`clientes/${cliente_id.value}`,data)).data
     console.log(`El cliente ${rescliente.CLIENTE_NOMBRE} fue modificado con exito`);

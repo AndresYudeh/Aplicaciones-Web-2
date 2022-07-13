@@ -2,7 +2,7 @@ export interface IResCliente{
     total: number;
     clientes: IClientes[];
 }
-
+// Atributos de la ruta clientes
 export interface IClientes{
     _id?: string;
     CLIENTE_ID: number;

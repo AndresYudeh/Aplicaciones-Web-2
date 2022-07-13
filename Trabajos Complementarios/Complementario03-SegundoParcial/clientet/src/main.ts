@@ -80,10 +80,6 @@ consultar.addEventListener('click', async()=>{
   tabla.id="tabla"
   tabla.border="1"
 
-  // tabla.style.marginTop = "40px";
-  // tabla.style.marginLeft = "20%";
-  // tabla.style.width = "80 %";
-
   tabla.style.marginTop = "65px";
   tabla.style.marginLeft = "35.5%";
   tabla.style.width = "80 %";
@@ -117,7 +113,7 @@ consultar.addEventListener('click', async()=>{
         const celda3= row.insertCell()
         celda3.innerHTML=`${cliente.CLIENTE_TELEFONO}`
         const celda5= row.insertCell();
-        celda5.innerHTML=`<button class="botoneliminar" value='${cliente.CLIENTE_ID}'>ELIMINAR </button>`;
+        celda5.innerHTML=`<button class="botoneliminar" value='${cliente.CLIENTE_ID}'>Eliminar </button>`;
 
     }
 //Consulta especifica
@@ -156,7 +152,6 @@ consultar.addEventListener('click', async()=>{
      const eliminado = data
      console.log(data);
      console.log(`Cliente eliminado => ${eliminado.CLIENTE_ID}`);
-     //swal(`Listo!`, `Eliminado ${eliminado.CARRO_PLACA}!`, `success`);
 
    })
 

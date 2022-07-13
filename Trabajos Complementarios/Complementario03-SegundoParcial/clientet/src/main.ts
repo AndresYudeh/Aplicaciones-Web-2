@@ -9,7 +9,7 @@ const httpAxios=axios.create({
 const app = document.querySelector<HTMLDivElement>('#app')!
 app.innerHTML=`
 <hr>
-<h1> Clientes </h1>
+<h1> Registro de Clientes </h1>
 <hr>
 `
 const etiqueta = document.createElement("label");

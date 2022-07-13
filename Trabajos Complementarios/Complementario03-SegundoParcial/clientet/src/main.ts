@@ -1,7 +1,9 @@
+//Importacion de las dependecias
 import './style.css'
 import axios from 'axios'
 import { IResCliente, IClientes } from './interfaces/ICliente'
 
+//Ruta:2500
 const httpAxios=axios.create({
   baseURL: `http://localhost:2500/v1/sextoa/api/`
 })
@@ -13,7 +15,7 @@ app.innerHTML=`
 <hr>
 `
 const etiqueta = document.createElement("label");
-etiqueta.textContent=`ID`
+etiqueta.textContent=`ID `
 const input = document.createElement("input");
 input.id="id"
 etiqueta.htmlFor="id"
@@ -25,19 +27,19 @@ app.appendChild(input);
 
 
 app.innerHTML += `
-<label for='CLIENTE_ID' >ID Cliente</label><input id='CLIENTE_ID' />
+<label for='CLIENTE_ID' >ID Cliente </label><input id='CLIENTE_ID' />
 <br>
 <br>
-<label for='CLIENTE_NOMBRE' >Nombre</label><input id='CLIENTE_NOMBRE' />
+<label for='CLIENTE_NOMBRE' >Nombre </label><input id='CLIENTE_NOMBRE' />
 <br>
 <br>
-<label for='CLIENTE_CEDULA' >Cedula</label><input id='CLIENTE_CEDULA' />
+<label for='CLIENTE_CEDULA' >Cedula </label><input id='CLIENTE_CEDULA' />
 <br>
 <br>
-<label for='CLIENTE_TELEFONO' >Telefono</label><input id='CLIENTE_TELEFONO' />
+<label for='CLIENTE_TELEFONO' >Telefono </label><input id='CLIENTE_TELEFONO' />
 <br>
 <br>
-<label for='Estado' >Estado</label><input id='Estado' />
+<label for='Estado' >Estado </label><input id='Estado' />
 <br>
 <br>
 
@@ -47,7 +49,7 @@ app.innerHTML += `
 
 <div id="cuerpo" />
 `
-// --------------------------------------------------------
+
 const id = document.querySelector<HTMLInputElement>('#id')!
 const cliente_id = document.querySelector<HTMLInputElement>('#CLIENTE_ID')!
 const cliente_nombre = document.querySelector<HTMLInputElement>('#CLIENTE_NOMBRE')!
@@ -72,7 +74,7 @@ nuevo.addEventListener('click', () =>{
   estado.value=""
 
 })
-//Consulta general y especifica
+//Para consulta general 
 consultar.addEventListener('click', async()=>{
   const resclientes:IResCliente =await (await httpAxios.get<IResCliente>('clientes')).data
   
@@ -116,7 +118,7 @@ consultar.addEventListener('click', async()=>{
         celda5.innerHTML=`<button class="botoneliminar" value='${cliente.CLIENTE_ID}'>Eliminar </button>`;
 
     }
-//Consulta especifica
+//Para consulta especifica
 
       cuerpo.innerHTML=""
       cuerpo.appendChild(tabla)
@@ -140,7 +142,7 @@ consultar.addEventListener('click', async()=>{
 
   })
 
-//eliminar
+//Metodo Eliminar
 
   document.querySelectorAll('.botoneliminar').forEach( (ele2 : Element )  =>{
 
@@ -171,7 +173,7 @@ const asignarValores=()=>{
 
 grabar.addEventListener('click', async()=>{
   const data = asignarValores()
-  //modificacion de datos
+//Modificar los datos
   if(id.value.trim().length > 0){
     const rescliente:IClientes = await(await httpAxios.put<IClientes>(`clientes/${cliente_id.value}`,data)).data
     console.log(`El cliente ${rescliente.CLIENTE_NOMBRE} fue modificado con exito`);

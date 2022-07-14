@@ -20,7 +20,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.borrarCliente = exports.actualizarCliente = exports.crearCliente = exports.obtenerCliente = exports.obtenerClientes = void 0;
+exports.recuperarCliente = exports.borrarCliente = exports.actualizarCliente = exports.crearCliente = exports.obtenerCliente = exports.obtenerClientes = void 0;
 //Dependecias requeridas
 const Models_1 = require("../Models");
 //Controlador para obtener clientes
@@ -80,3 +80,10 @@ const borrarCliente = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     res.json(ClienteBorrado);
 });
 exports.borrarCliente = borrarCliente;
+//Controlador para recuperar clientes
+const recuperarCliente = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const id = req.params;
+    const ClienteBorrado = yield Models_1.Cliente.findOneAndUpdate(id, { Estado: true }, { new: true }).catch((err) => { res.status(400).json({ status: 'No es una ID valida >:c', error: err }); });
+    res.json(ClienteBorrado);
+});
+exports.recuperarCliente = recuperarCliente;

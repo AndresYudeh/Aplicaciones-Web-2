@@ -67,13 +67,21 @@ const borrarCliente = async (req:Request,res:Response)=>{
     res.json(ClienteBorrado);
 }
 
+//Controlador para recuperar clientes
+const recuperarCliente = async (req:Request,res:Response)=>{
+    const id  = req.params;
+    const ClienteBorrado = await Cliente.findOneAndUpdate(id, {Estado:true}, {new:true}).catch((err)=>{res.status(400).json({status:'No es una ID valida >:c', error:err})});
+    res.json(ClienteBorrado);
+}
+
 //exportación de controladores desarrollados
 export{
     obtenerClientes,
     obtenerCliente, 
     crearCliente,
     actualizarCliente,
-    borrarCliente
+    borrarCliente,
+    recuperarCliente
 
 
 }

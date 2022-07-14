@@ -6,7 +6,7 @@ import {consul, guarda} from './controllers/clientes'
 const app = document.querySelector<HTMLDivElement>('#app')!
 
 app.innerHTML += `
-<h1>Clientes</h1>
+<h1>Registro de Clientes</h1>
 <label for='id' >ID </label><input readonly="readonly" type="text" id='id' />
 
 <label for='CLIENTE_ID' >Cliente ID </label><input id='CLIENTE_ID' />
